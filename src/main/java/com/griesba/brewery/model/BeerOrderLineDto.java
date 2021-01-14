@@ -18,6 +18,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "style",
     "upc",
     "orderQuantity",
+    "quantityAllocated",
+    "price",
     "creationDate",
     "lastModificationDate"
 })
@@ -38,6 +40,10 @@ public class BeerOrderLineDto implements Serializable
     private String upc;
     @JsonProperty("orderQuantity")
     private Integer orderQuantity;
+    @JsonProperty("quantityAllocated")
+    private Integer quantityAllocated;
+    @JsonProperty("price")
+    private Double price;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ssZ", timezone = "UTC")
     @JsonProperty("creationDate")
     private OffsetDateTime creationDate;
@@ -115,6 +121,26 @@ public class BeerOrderLineDto implements Serializable
         this.orderQuantity = orderQuantity;
     }
 
+    @JsonProperty("quantityAllocated")
+    public Integer getQuantityAllocated() {
+        return quantityAllocated;
+    }
+
+    @JsonProperty("quantityAllocated")
+    public void setQuantityAllocated(Integer quantityAllocated) {
+        this.quantityAllocated = quantityAllocated;
+    }
+
+    @JsonProperty("price")
+    public Double getPrice() {
+        return price;
+    }
+
+    @JsonProperty("price")
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
     @JsonProperty("creationDate")
     public OffsetDateTime getCreationDate() {
         return creationDate;
@@ -186,6 +212,16 @@ public class BeerOrderLineDto implements Serializable
 
         public BeerOrderLineDto.BeerOrderLineDtoBuilder withOrderQuantity(Integer orderQuantity) {
             ((BeerOrderLineDto) this.instance).orderQuantity = orderQuantity;
+            return this;
+        }
+
+        public BeerOrderLineDto.BeerOrderLineDtoBuilder withQuantityAllocated(Integer quantityAllocated) {
+            ((BeerOrderLineDto) this.instance).quantityAllocated = quantityAllocated;
+            return this;
+        }
+
+        public BeerOrderLineDto.BeerOrderLineDtoBuilder withPrice(Double price) {
+            ((BeerOrderLineDto) this.instance).price = price;
             return this;
         }
 

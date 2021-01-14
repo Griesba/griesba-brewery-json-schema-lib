@@ -1,0 +1,10 @@
+{
+  "type" : "object",
+  "additionalProperties": false,
+  "properties": {
+    "orderId": {
+      "type": "string",
+      "format": "uuid"
+    }
+  }
+}

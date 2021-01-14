@@ -1,0 +1,15 @@
+{
+  "type" : "object",
+  "additionalProperties": false,
+  "properties": {
+    "beerOrderDto": {
+      "$ref": "../BeerOrderDto.json"
+    },
+    "allocationError": {
+      "type": "boolean"
+    },
+    "pendingInventory": {
+      "type": "boolean"
+    }
+  }
+}

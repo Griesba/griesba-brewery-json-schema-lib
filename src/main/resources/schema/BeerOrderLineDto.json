@@ -27,6 +27,12 @@
     "orderQuantity": {
       "type": "integer"
     },
+    "quantityAllocated": {
+      "type": "integer"
+    },
+    "price": {
+      "type": "number"
+    },
     "creationDate": {
       "existingJavaType": "java.time.OffsetDateTime",
       "type": "object",
